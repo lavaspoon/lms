@@ -1,19 +1,18 @@
 package lava.lms.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "users")
+@Table(name = "MEMBER")
 public class User {
     @Id
-    private String id;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String username;
-    private String email;
-
-    // getters and setters
+    private String role;  // "Owner", "Manager", "Admin"
 }
